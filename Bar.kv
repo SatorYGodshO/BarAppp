@@ -1,0 +1,166 @@
+<RightContentCls>:
+    disabled: True
+    adaptive_size: True
+    pos_hint: {"center_y": .5}
+
+    MDIconButton:
+        icon: root.icon
+        icon_size: "16sp"
+        md_bg_color_disabled: 0, 0, 0, 0
+
+    MDLabel:
+        text: root.text
+        font_style: "Caption"
+        adaptive_size: True
+        pos_hint: {"center_y": .5}
+
+
+<Conteiner>:
+
+    tables: table
+    text_fild: text
+    text_fild1: text1
+    text_fild2: text2
+
+
+
+
+    MDBottomNavigation:
+
+        #panel_color: "#eeeaea"
+        selected_color_background: "orange"
+
+
+        MDBottomNavigationItem:
+
+            name: 'screen 1'
+            text: 'Таблица'
+
+
+
+            on_tab_release: root.table(0)
+
+
+
+
+            MDScrollView:
+                MDList:
+                    id: table
+        MDBottomNavigationItem:
+
+            name: 'screen 4'
+            text: 'Таблица Цен'
+
+
+
+
+
+
+
+
+
+
+
+        MDBottomNavigationItem:
+            text: "Добавить"
+            on_tab_press: root.text_input()
+
+
+            BoxLayout:
+
+                orientation: "vertical"
+                padding: 40
+                id: text
+
+
+
+
+
+        MDBottomNavigationItem:
+            name: 'screen 3'
+            text: "Изменить"
+            icon: 'linkedin'
+            on_tab_press: root.edit_text()
+            BoxLayout:
+
+                orientation: "vertical"
+                padding: 40
+                id: text2
+
+        MDBottomNavigationItem:
+            name: 'screen 2'
+            text: "Удалить"
+            on_tab_press:   root.text_del()
+            BoxLayout:
+
+                orientation: "vertical"
+                padding: 40
+                id: text1
+
+
+<ManipulationText>:
+    height: text_field.height
+
+    MDTextField:
+
+        id: text_field
+
+
+
+
+    MDTextField:
+        id: text_field
+        pos_hint: {"center_y": .3}
+
+    MDTextField:
+        id: text_field
+        pos_hint: {"center_y": .2}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ItemTable>:
+
+    size_hint_y: None
+    height: "42dp"
+
+    MDLabel:
+        text: root.name
+        halign: "center"
+
+    MDLabel:
+
+        text: root.base
+        halign: "center"
+
+    MDLabel:
+
+        text: root.stock
+        halign: "center"
+
+    MDLabel:
+
+        text: root.write
+        halign: "center"
+
+
+
+
+
+
+
+
+
+
+
